@@ -31,9 +31,8 @@ public class AmazonTest extends Utility {
         // Verify total number of items displayed
         verifyNumberFromElement(By.xpath("//div[@class='s-main-slot s-result-list s-search-results sg-row']//a/span[contains(text(),'Dell')]"), 30);
         // Iterate the item list and print the product names
-        for (WebElement d : dellList) {
-            String printList = d.getText();
-            System.out.println(printList);
+        for (WebElement d : dellList) {           
+            System.out.println(d.getText());
         }
         // Find and click Dell Latitude 5430
         clickOnElement(By.xpath("//span[normalize-space()='Dell Latitude 5430 14.0 inch FHD Business Laptop, Intel Core i7-1265U, 16GB RAM, 256GB SSD, Windows 11 Pro, Grey']"));
@@ -41,7 +40,7 @@ public class AmazonTest extends Utility {
         verifyTextDisplayed(By.xpath("//span[@id='productTitle']"), "Dell Latitude 5430 14.0 inch FHD Business Laptop, Intel Core i7-1265U, 16GB RAM, 256GB SSD, Windows 11 Pro, Grey");
     }
 
-    //@After
+    @After
     public void tearDown() {
         closeBrowser();
     }
